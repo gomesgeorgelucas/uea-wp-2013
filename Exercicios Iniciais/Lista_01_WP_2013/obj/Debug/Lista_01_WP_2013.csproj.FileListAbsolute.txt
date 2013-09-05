@@ -1,0 +1,6 @@
+c:\users\dev\documents\visual studio 2012\Projects\Lista_01_WP_2013\Lista_01_WP_2013\bin\Debug\Lista_01_WP_2013.exe.config
+C:\Users\dev\documents\visual studio 2012\Projects\Lista_01_WP_2013\Lista_01_WP_2013\bin\Debug\Lista_01_WP_2013.exe
+C:\Users\dev\documents\visual studio 2012\Projects\Lista_01_WP_2013\Lista_01_WP_2013\bin\Debug\Lista_01_WP_2013.pdb
+C:\Users\dev\documents\visual studio 2012\Projects\Lista_01_WP_2013\Lista_01_WP_2013\obj\Debug\Lista_01_WP_2013.csprojResolveAssemblyReference.cache
+C:\Users\dev\documents\visual studio 2012\Projects\Lista_01_WP_2013\Lista_01_WP_2013\obj\Debug\Lista_01_WP_2013.exe
+C:\Users\dev\documents\visual studio 2012\Projects\Lista_01_WP_2013\Lista_01_WP_2013\obj\Debug\Lista_01_WP_2013.pdb

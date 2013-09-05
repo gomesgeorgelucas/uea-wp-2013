@@ -1,0 +1,7 @@
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\Quadrado\Quadrado\bin\Debug\Quadrado.exe.config
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\2 Quadrado\Quadrado\bin\Debug\Quadrado.exe.config
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\2 Quadrado\Quadrado\bin\Debug\Quadrado.exe
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\2 Quadrado\Quadrado\bin\Debug\Quadrado.pdb
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\2 Quadrado\Quadrado\obj\Debug\Quadrado.exe
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\2 Quadrado\Quadrado\obj\Debug\Quadrado.pdb
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\2 Quadrado\Quadrado\obj\Debug\Quadrado.csprojResolveAssemblyReference.cache

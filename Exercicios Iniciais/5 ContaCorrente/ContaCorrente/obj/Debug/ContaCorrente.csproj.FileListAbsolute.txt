@@ -1,0 +1,7 @@
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\ContaCorrente\ContaCorrente\bin\Debug\ContaCorrente.exe.config
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\5 ContaCorrente\ContaCorrente\bin\Debug\ContaCorrente.exe.config
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\5 ContaCorrente\ContaCorrente\bin\Debug\ContaCorrente.exe
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\5 ContaCorrente\ContaCorrente\bin\Debug\ContaCorrente.pdb
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\5 ContaCorrente\ContaCorrente\obj\Debug\ContaCorrente.exe
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\5 ContaCorrente\ContaCorrente\obj\Debug\ContaCorrente.pdb
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\5 ContaCorrente\ContaCorrente\obj\Debug\ContaCorrente.csprojResolveAssemblyReference.cache

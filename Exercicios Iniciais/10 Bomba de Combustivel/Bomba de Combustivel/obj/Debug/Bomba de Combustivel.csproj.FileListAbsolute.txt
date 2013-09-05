@@ -1,0 +1,12 @@
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\Bomba de Combustivel\Bomba de Combustivel\bin\Debug\Bomba de Combustivel.exe.config
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\Bomba de Combustivel\Bomba de Combustivel\bin\Debug\Bomba de Combustivel.exe
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\Bomba de Combustivel\Bomba de Combustivel\bin\Debug\Bomba de Combustivel.pdb
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\Bomba de Combustivel\Bomba de Combustivel\obj\Debug\Bomba de Combustivel.csprojResolveAssemblyReference.cache
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\Bomba de Combustivel\Bomba de Combustivel\obj\Debug\Bomba de Combustivel.exe
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\Bomba de Combustivel\Bomba de Combustivel\obj\Debug\Bomba de Combustivel.pdb
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\10 Bomba de Combustivel\Bomba de Combustivel\bin\Debug\Bomba de Combustivel.exe.config
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\10 Bomba de Combustivel\Bomba de Combustivel\obj\Debug\Bomba de Combustivel.exe
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\10 Bomba de Combustivel\Bomba de Combustivel\obj\Debug\Bomba de Combustivel.pdb
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\10 Bomba de Combustivel\Bomba de Combustivel\bin\Debug\Bomba de Combustivel.exe
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\10 Bomba de Combustivel\Bomba de Combustivel\bin\Debug\Bomba de Combustivel.pdb
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\10 Bomba de Combustivel\Bomba de Combustivel\obj\Debug\Bomba de Combustivel.csprojResolveAssemblyReference.cache

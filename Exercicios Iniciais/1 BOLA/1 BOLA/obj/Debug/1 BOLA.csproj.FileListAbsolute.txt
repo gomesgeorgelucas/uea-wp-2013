@@ -1,0 +1,6 @@
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\1 BOLA\1 BOLA\bin\Debug\1 BOLA.exe.config
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\1 BOLA\1 BOLA\bin\Debug\1 BOLA.exe
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\1 BOLA\1 BOLA\bin\Debug\1 BOLA.pdb
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\1 BOLA\1 BOLA\obj\Debug\1 BOLA.csprojResolveAssemblyReference.cache
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\1 BOLA\1 BOLA\obj\Debug\1 BOLA.exe
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\1 BOLA\1 BOLA\obj\Debug\1 BOLA.pdb

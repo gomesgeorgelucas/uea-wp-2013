@@ -1,0 +1,7 @@
+C:\Users\Lucas Begnini\Documents\Visual Studio 2013\Projects\Introdução ao C#\Bichinho Virtual\Bichinho Virtual\bin\Debug\Bichinho Virtual.exe.config
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\7 Bichinho Virtual\Bichinho Virtual\bin\Debug\Bichinho Virtual.exe.config
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\7 Bichinho Virtual\Bichinho Virtual\obj\Debug\Bichinho Virtual.csprojResolveAssemblyReference.cache
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\7 Bichinho Virtual\Bichinho Virtual\bin\Debug\Bichinho Virtual.exe
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\7 Bichinho Virtual\Bichinho Virtual\bin\Debug\Bichinho Virtual.pdb
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\7 Bichinho Virtual\Bichinho Virtual\obj\Debug\Bichinho Virtual.exe
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\7 Bichinho Virtual\Bichinho Virtual\obj\Debug\Bichinho Virtual.pdb

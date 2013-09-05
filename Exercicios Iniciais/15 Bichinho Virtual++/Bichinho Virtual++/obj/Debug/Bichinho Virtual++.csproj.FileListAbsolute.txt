@@ -1,0 +1,6 @@
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\Bichinho Virtual++\Bichinho Virtual++\bin\Debug\Bichinho Virtual++.exe.config
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\Bichinho Virtual++\Bichinho Virtual++\obj\Debug\Bichinho Virtual++.csprojResolveAssemblyReference.cache
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\Bichinho Virtual++\Bichinho Virtual++\bin\Debug\Bichinho Virtual++.exe
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\Bichinho Virtual++\Bichinho Virtual++\bin\Debug\Bichinho Virtual++.pdb
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\Bichinho Virtual++\Bichinho Virtual++\obj\Debug\Bichinho Virtual++.exe
+C:\Users\Lucas Begnini\Documents\SD\Exercicios Iniciais\Bichinho Virtual++\Bichinho Virtual++\obj\Debug\Bichinho Virtual++.pdb
