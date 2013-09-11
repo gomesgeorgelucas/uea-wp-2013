@@ -1,0 +1,8 @@
+* Calc
+  Escopo : Modular?
+     * Básica (Fácil de usar)
+     +,-,/,*,=,(),'.'
+     Display(Dinâmico) e 1 estático
+     + verificar cálculos
+     Excluir <- 1 a 1
+     Ponto

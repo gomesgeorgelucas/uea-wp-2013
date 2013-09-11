@@ -1,0 +1,19 @@
+* Calc
+  Escopo : Modular?
+     * Básica (Fácil de usar)
+     +,-,/,*,=,(),'.'
+     Display(Dinâmico) e 1 estático
+     + verificar cálculos
+     Excluir <- 1 a 1
+     Ponto
+     'Ans' implicito na operação
+     Puxa do display estático
+
+* Científica
+  * Básica
+  * Integral e derivada definida
+  * Display que espande com o tap
+  * Nevagação por touch (A verificar)
+  * Funções de nívle superior
+    * personalização pagando
+	Gerenciado pela interface 
