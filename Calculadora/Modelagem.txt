@@ -1,4 +1,4 @@
-* Calc
+﻿* Calc
   Escopo : Modular?
      * Básica (Fácil de usar)
      +,-,/,*,=,(),'.'
@@ -17,3 +17,4 @@
   * Funções de nívle superior
     * personalização pagando
 	Gerenciado pela interface 
+É PARA WINDOWS 8.0
