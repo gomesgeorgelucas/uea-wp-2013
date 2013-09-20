@@ -1,0 +1,142 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="DirectCalc7.DCBasica"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="DIRECTCALC" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="114*"/>
+                <ColumnDefinition Width="114*"/>
+                <ColumnDefinition Width="114*"/>
+                <ColumnDefinition Width="114*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="139*"/>
+                <RowDefinition Height="99*"/>
+                <RowDefinition Height="99*"/>
+                <RowDefinition Height="99*"/>
+                <RowDefinition Height="99*"/>
+                <RowDefinition Height="99*"/>
+            </Grid.RowDefinitions>
+            <Button Name="btResultado" Grid.Column="0" 
+					 Grid.ColumnSpan="4"
+					 Grid.Row="0" Grid.RowSpan="1"
+					 Background="Azure">
+            </Button>
+            <TextBlock Name="txtExpressao" Grid.Column="0"
+					 Grid.ColumnSpan="4"
+					 Grid.Row="1"
+                       FontFamily="Arial"
+                       FontSize="40"
+                       FlowDirection="RightToLeft"
+                       HorizontalAlignment="Stretch"
+                       Foreground="Green">
+            </TextBlock>
+            <Button Name="btAC" Grid.Column="0" 
+					Grid.Row="2" 
+					Content="Apagar"
+                    FontSize="19">
+            </Button>
+            <Button Name="btAbrepar" Grid.Column="1" 
+					Grid.Row="2" 
+					Content="(" Click="btAbrepar_Click">
+            </Button>
+            <Button Name="btFechapar" Grid.Column="2" 
+					Grid.Row="2" 
+					Content=")" Click="btFechapar_Click">
+            </Button>
+            <Button Name="btMais" Grid.Column="3" 
+					Grid.Row="2" 
+					Content="+" Click="btMais_Click">
+            </Button>
+            <Button Name="bt7" Grid.Column="0" 
+					Grid.Row="3" 
+					Content="7" Click="bt7_Click">
+            </Button>
+            <Button Name="bt4" Grid.Column="0" 
+					Grid.Row="4" 
+					Content="4" Click="bt4_Click">
+            </Button>
+            <Button Name="bt1" Grid.Column="0" 
+					Grid.Row="5" 
+					Content="1" Click="bt1_Click">
+            </Button>
+            <Button Name="bt8" Grid.Column="1" 
+					Grid.Row="3" 
+					Content="8" Click="bt8_Click">
+            </Button>
+            <Button Name="bt5" Grid.Column="1" 
+					Grid.Row="4" 
+					Content="5" Click="bt5_Click">
+            </Button>
+            <Button Name="bt2" Grid.Column="1" 
+					Grid.Row="5" 
+					Content="2" Click="bt2_Click"/>
+            <Button Name="bt9" Grid.Column="2" 
+					Grid.Row="3" 
+					Content="9" Click="bt9_Click">
+            </Button>
+            <Button Name="bt6" Grid.Column="2" 
+					Grid.Row="4" 
+					Content="6" Click="bt6_Click">
+            </Button>
+            <Button Name="bt3" Grid.Column="2" 
+					Grid.Row="5" 
+					Content="3" Click="bt3_Click">
+            </Button>
+            <Button Name="btMin" Grid.Column="3" 
+					Grid.Row="3" 
+					Content="-" Click="btMin_Click">
+            </Button>
+            <Button Name="btMult" Grid.Column="3" 
+					Grid.Row="4" 
+					Content="x" Click="btMult_Click">
+            </Button>
+
+            <Button Name="btDiv" Grid.Column="3" 
+					Grid.Row="5" 
+					Content="/" Click="btDiv_Click">
+            </Button>
+            <Button Name="bt0" Grid.Column="0"
+					Grid.ColumnSpan="2" 
+					Grid.Row="6" 
+					Content="0" Click="bt0_Click">
+            </Button>
+
+
+            <Button Name="btPt" Grid.Column="2" 
+					Grid.Row="6" 
+					Content="." Click="btPt_Click">
+            </Button>
+            <Button Name="btIgual" Grid.Column="3" 
+					Grid.Row="6" 
+					Content="=" Click="btIgual_Click">
+            </Button>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>
