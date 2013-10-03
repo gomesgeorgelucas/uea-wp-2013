@@ -52,14 +52,12 @@
 					 Grid.Row="1"
                        FontFamily="Arial"
                        FontSize="40"
-                       FlowDirection="RightToLeft"
-                       HorizontalAlignment="Stretch"
                        Foreground="Green">
             </TextBlock>
             <Button Name="btAC" Grid.Column="0" 
 					Grid.Row="2" 
 					Content="Apagar"
-                    FontSize="19">
+                    FontSize="19" Click="btAC_Click">
             </Button>
             <Button Name="btAbrepar" Grid.Column="1" 
 					Grid.Row="2" 

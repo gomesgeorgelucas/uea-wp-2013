@@ -1,4 +1,3 @@
-c:\users\walderi filho\documents\visual studio 2012\Projects\DirectCalc7.1\DirectCalc7.1\obj\Debug\DirectCalc7.csprojResolveAssemblyReference.cache
 c:\users\walderi filho\documents\visual studio 2012\Projects\DirectCalc7.1\DirectCalc7.1\obj\Debug\App.g.cs
 c:\users\walderi filho\documents\visual studio 2012\Projects\DirectCalc7.1\DirectCalc7.1\obj\Debug\DCBasica.g.cs
 c:\users\walderi filho\documents\visual studio 2012\Projects\DirectCalc7.1\DirectCalc7.1\obj\Debug\MainPage.g.cs
