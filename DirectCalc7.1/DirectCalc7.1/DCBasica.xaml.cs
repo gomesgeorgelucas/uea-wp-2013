@@ -8,6 +8,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using System.Text;
+using DirectCalc7._1;
 
 namespace DirectCalc7
 {
@@ -18,7 +19,7 @@ namespace DirectCalc7
         /// </summary>
       // propriedade do diaplay da calculadora
         private String _displayMsg;
-      
+
 	    public String displayMsg
 	    {
 	    	get { return _displayMsg;}
@@ -26,11 +27,23 @@ namespace DirectCalc7
                     _displayMsg = value;
             }
 	    }
+
+        private String _resposta;
+
+        public String resposta
+        {
+            get { return _resposta; }
+            set { _resposta = value; }
+        }
         
+
+        Phaser verificador = new Phaser();
+
         public DCBasica()
         ///Inicializador da calculadora
         {
             InitializeComponent();
+           
         }
 
         private void mostrarCalc(String displayMsg)
@@ -58,7 +71,10 @@ namespace DirectCalc7
 
         private void btIgual_Click(object sender, RoutedEventArgs e)
         {
-
+            verificador.tokenaizer(displayMsg);
+            btResultado.Text = verificador.resultado.ToString();
+            displayMsg = displayMsg.Remove(0);
+            mostrarCalc(displayMsg);
         }
 
         private void bt1_Click(object sender, RoutedEventArgs e)
@@ -171,6 +187,15 @@ namespace DirectCalc7
             ///Botão para apagar o ultimo acrescimo a string
             displayMsg = displayMsg.Remove(displayMsg.Length - 1);
             mostrarCalc(displayMsg);
+        }
+
+        private void btResultado_ManipulationStarted(object sender, System.Windows.Input.ManipulationStartedEventArgs e)
+        {
+            AbrePagina("/DCBasica.xaml");
+        }
+        private void AbrePagina(string destino)
+        {
+            NavigationService.Navigate(new Uri(destino, UriKind.Relative));
         }
 
     }

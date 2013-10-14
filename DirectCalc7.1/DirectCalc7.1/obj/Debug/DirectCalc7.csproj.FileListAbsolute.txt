@@ -11,3 +11,4 @@ c:\users\walderi filho\documents\visual studio 2012\Projects\DirectCalc7.1\Direc
 c:\users\walderi filho\documents\visual studio 2012\Projects\DirectCalc7.1\DirectCalc7.1\Bin\Debug\DirectCalc7._1.xap
 c:\users\walderi filho\documents\visual studio 2012\Projects\DirectCalc7.1\DirectCalc7.1\obj\Debug\DirectCalc7.1.pdb
 c:\users\walderi filho\documents\visual studio 2012\Projects\DirectCalc7.1\DirectCalc7.1\obj\Debug\XapCacheFile.xml
+C:\Users\Walderi Filho\documents\visual studio 2012\Projects\DirectCalc7.1\DirectCalc7.1\obj\Debug\DirectCalc7.csprojResolveAssemblyReference.cache

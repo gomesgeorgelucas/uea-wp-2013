@@ -42,11 +42,13 @@
                 <RowDefinition Height="99*"/>
                 <RowDefinition Height="99*"/>
             </Grid.RowDefinitions>
-            <Button Name="btResultado" Grid.Column="0" 
+            <TextBlock Name="btResultado"
+                       Grid.Column="0" 
 					 Grid.ColumnSpan="4"
 					 Grid.Row="0" Grid.RowSpan="1"
-					 Background="Azure">
-            </Button>
+					 Foreground = "AntiqueWhite"
+                       ManipulationStarted="btResultado_ManipulationStarted">
+            </TextBlock>
             <TextBlock Name="txtExpressao" Grid.Column="0"
 					 Grid.ColumnSpan="4"
 					 Grid.Row="1"
