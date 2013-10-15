@@ -89,13 +89,31 @@ namespace DirectCalc7._1
             set { _expressao = value; }
         }
 
-        Token tnum,toper;
+        private Token _tnum;
+
+        public Token tnum
+        {
+            get { return _tnum; }
+            set { _tnum = value; }
+        }
+
+        private Token _toper;
+
+        public Token toper
+        {
+            get { return _toper; }
+            set { _toper = value; }
+        }
+
+        double[] ne = new double[2];
+
+        double resp;
         double a,b=0;
         int c = 0;
         public void tokenaizer(string msg)
         {
             
-        //  inteiros(msg);
+          inteiros(msg);
            
            /* inteiro1 = "2";
             inteiro1 = inteiro1 + "5" +"2"+ "1";
@@ -131,16 +149,18 @@ namespace DirectCalc7._1
                         msg = msg.Remove(0,1);/// entao esse item é removido
                         break;
                     case '.':
-                        flutuante = flutuante + ".";/// Caso encontrar um ponto é acrescentado a outra string um ponto
+                        inteiro1 = inteiro1 + ".";/// Caso encontrar um ponto é acrescentado a outra string um ponto
                         msg = msg.Remove(0,1);/// e removido esse item
-                        flutuantes(msg,flutuante);/// e é enviado a mensagem restante com a string que representa o ponto flutuante
                         break;
                     case 'x':
-                        tnum.numero = double.Parse(inteiro1);/// Caso entrar uma multiplicaçao é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros
-                        expressao.Add(tnum);                        
+                        a = double.Parse(inteiro1);
+                        //tnum.numero = a;/// Caso entrar uma multiplicaçao é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros
+                        //expressao.Add(tnum);                        
+                        ne[c]=a;
                         msg = msg.Remove(0,1);/// é removido esse item
-                        toper.operador = 'x';
-                        expressao.Add(toper);/// Acrescenta o operador especifico para essa operação no vetor de operadores
+                        //toper.operador = 'x';
+                        //expressao.Add(toper);/// Acrescenta o operador especifico para essa operação no vetor de operadores
+                        c++;
                         break;
                     case '/':
                         tnum.numero = double.Parse(inteiro1);/// Caso entrar uma multiplicaçao é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros
@@ -178,78 +198,18 @@ namespace DirectCalc7._1
                         expressao.Add(toper);/// Acrescenta o operador especifico para essa operação no vetor de operadores
                         break;                    
                     default:
-                        inteiro1 =  inteiro1.Remove(0);
+                        a = double.Parse(inteiro1);
+                        msg = msg.Remove(0, 1);
                         break;   
                 }
             }
+            resolver(expressao);
+            
         }
-        public void flutuantes(string msg, string flutuante)
+        
+        public void resolver(List<Token> tokens)
         {
-            c = 0;
-            foreach (char item in msg)
-            {            
-                switch (item)
-                {
-                    case '1':
-                    case '2':
-                    case '3':
-                    case '4':
-                    case '5':
-                    case '6':
-                    case '7':
-                    case '8':
-                    case '9':
-                    case '0':
-                        flutuante = flutuante + item;
-                        msg = msg.Remove(0,c);
-                        break;
-                    case 'x':
-                        tnum.numero = double.Parse(flutuante);/// Caso entrar uma multiplicaçao é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros
-                        expressao.Add(tnum);
-                        msg = msg.Remove(0, 1);/// é removido esse item
-                        toper.operador = 'x';
-                        expressao.Add(toper);/// Acrescenta o operador especifico para essa operação no vetor de operadores
-                        break;
-                    case '/':
-                        tnum.numero = double.Parse(flutuante);/// Caso entrar uma multiplicaçao é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros
-                        expressao.Add(tnum);
-                        msg = msg.Remove(0, 1);/// é removido esse item
-                        toper.operador = '/';
-                        expressao.Add(toper);/// Acrescenta o operador especifico para essa operação no vetor de operadores
-                        break;
-                    case '+':
-                        tnum.numero = double.Parse(flutuante);/// Caso entrar uma multiplicaçao é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros
-                        expressao.Add(tnum);
-                        msg = msg.Remove(0, 1);/// é removido esse item
-                        toper.operador = '+';
-                        expressao.Add(toper);/// Acrescenta o operador especifico para essa operação no vetor de operadores
-                        break;
-                    case '-':
-                        tnum.numero = double.Parse(flutuante);/// Caso entrar uma multiplicaçao é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros
-                        expressao.Add(tnum);
-                        msg = msg.Remove(0, 1);/// é removido esse item
-                        toper.operador = '-';
-                        expressao.Add(toper);/// Acrescenta o operador especifico para essa operação no vetor de operadores
-                        break;
-                    case '(':
-                        tnum.numero = double.Parse(flutuante);/// Caso entrar uma multiplicaçao é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros
-                        expressao.Add(tnum);
-                        msg = msg.Remove(0, 1);/// é removido esse item
-                        toper.operador = '(';
-                        expressao.Add(toper);/// Acrescenta o operador especifico para essa operação no vetor de operadores
-                        break;
-                    case ')':
-                        tnum.numero = double.Parse(flutuante);/// Caso entrar uma multiplicaçao é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros
-                        expressao.Add(tnum);
-                        msg = msg.Remove(0, 1);/// é removido esse item
-                        toper.operador = ')';
-                        expressao.Add(toper);/// Acrescenta o operador especifico para essa operação no vetor de operadores
-                        break;
-                    default:
-                        break;
-                }
-                c++;
-            }
+            resultado = ne[0] * ne[1]; 
         }
 
         public int[] reorganizar(int[] numeros, int index)

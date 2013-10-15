@@ -71,6 +71,7 @@ namespace DirectCalc7
 
         private void btIgual_Click(object sender, RoutedEventArgs e)
         {
+            displayMsg = displayMsg + "=";
             verificador.tokenaizer(displayMsg);
             btResultado.Text = verificador.resultado.ToString();
             displayMsg = displayMsg.Remove(0);
