@@ -47,31 +47,14 @@ namespace DirectCalc7._1
             get { return _numeros; }
             set { _numeros = value; }
         }
-        
-
-         private String _flutuante;
-
-        public String flutuante
-        {
-            get { return _flutuante; }
-            set { _flutuante = value; }
-        }
-        
+                
         private String _inteiro1;
 
         public String inteiro1
         {
             get { return _inteiro1; }
             set { _inteiro1 = value; }
-        }
-        private String _inteiro2;
-
-        public String inteiro2
-        {
-            get { return _inteiro2; }
-            set { _inteiro2 = value; }
-        }
-        
+        }        
 
         private double _resultado;
 
@@ -105,8 +88,7 @@ namespace DirectCalc7._1
             set { _toper = value; }
         }
 
-        double[] ne = new double[2];
-
+        
         double resp;
         double a,b=0;
         int c = 0;
@@ -153,10 +135,10 @@ namespace DirectCalc7._1
                         msg = msg.Remove(0,1);/// e removido esse item
                         break;
                     case 'x':
-                        a = double.Parse(inteiro1);
-                        //tnum.numero = a;/// Caso entrar uma multiplicaçao é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros
+                        a = double.Parse(inteiro1);/// Caso entrar uma multiplicaçao é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros
+                        //tnum.numero = a;
                         //expressao.Add(tnum);                        
-                        ne[c]=a;
+                        numeros[0] = a;
                         msg = msg.Remove(0,1);/// é removido esse item
                         //toper.operador = 'x';
                         //expressao.Add(toper);/// Acrescenta o operador especifico para essa operação no vetor de operadores
@@ -203,14 +185,15 @@ namespace DirectCalc7._1
                         break;   
                 }
             }
-            resolver(expressao);
+            resultado = numeros[0] * numeros[1];
+            //resolver(expressao);
             
         }
-        
+        /*
         public void resolver(List<Token> tokens)
         {
             resultado = ne[0] * ne[1]; 
-        }
+        }*/
 
         public int[] reorganizar(int[] numeros, int index)
         {
