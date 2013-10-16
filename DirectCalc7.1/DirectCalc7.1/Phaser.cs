@@ -38,15 +38,6 @@ namespace DirectCalc7._1
             get { return _operadores; }
             set { _operadores = value; }
         }
-        
-
-        private double[] _numeros;
-
-        public double[] numeros
-        {
-            get { return _numeros; }
-            set { _numeros = value; }
-        }
                 
         private String _inteiro1;
 
@@ -88,29 +79,16 @@ namespace DirectCalc7._1
             set { _toper = value; }
         }
 
-        
-        double resp;
-        double a,b=0;
+        double[] numeros = new double[2];
+        String operadores;
         int c = 0;
         public void tokenaizer(string msg)
         {
-            
-          inteiros(msg);
-           
-           /* inteiro1 = "2";
-            inteiro1 = inteiro1 + "5" +"2"+ "1";
-            inteiro2 = "2";
-            foreach (char l in inteiro1)
-            {
-                if (l == '2' )
-                {
-                    inteiro1 = inteiro1.Remove(0, 1);
-                }
-            } 
-            a = double.Parse(inteiro1);
-            b = double.Parse(inteiro2);
-            resultado = a * b;*/
+            resultado = 0;
+          inteiros(msg);          
         }
+
+        
         public void inteiros(string msg)
         {
             foreach (char item in msg)
@@ -135,53 +113,46 @@ namespace DirectCalc7._1
                         msg = msg.Remove(0,1);/// e removido esse item
                         break;
                     case 'x':
-                        a = double.Parse(inteiro1);/// Caso entrar uma multiplicaçao é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros
-                        //tnum.numero = a;
-                        //expressao.Add(tnum);                        
-                        numeros[0] = a;
+                        numeros[c] = double.Parse(inteiro1);// Caso entrar uma multiplicaçao é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros
+                        inteiro1 = inteiro1.Remove(0,inteiro1.Length);
                         msg = msg.Remove(0,1);/// é removido esse item
-                        //toper.operador = 'x';
-                        //expressao.Add(toper);/// Acrescenta o operador especifico para essa operação no vetor de operadores
-                        c++;
+                        c = c + 1;
                         break;
                     case '/':
-                        tnum.numero = double.Parse(inteiro1);/// Caso entrar uma multiplicaçao é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros
-                        expressao.Add(tnum);
+                        numeros[c] = double.Parse(inteiro1);// Caso entrar uma divisao é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros
+                        inteiro1 = inteiro1.Remove(0, inteiro1.Length);
                         msg = msg.Remove(0, 1);/// é removido esse item
-                        toper.operador = '/';
-                        expressao.Add(toper);/// Acrescenta o operador especifico para essa operação no vetor de operadores
+                        c = c + 1;
                         break;
                     case '+':
-                        tnum.numero = double.Parse(inteiro1);/// Caso entrar uma multiplicaçao é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros
-                        expressao.Add(tnum);
+                        numeros[c] = double.Parse(inteiro1);// Caso entrar uma soma é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros
+                        inteiro1 = inteiro1.Remove(0, inteiro1.Length);
                         msg = msg.Remove(0, 1);/// é removido esse item
-                        toper.operador = '+';
-                        expressao.Add(toper);/// Acrescenta o operador especifico para essa operação no vetor de operadores
+                        c = c + 1;
                         break;
                     case '-':
-                        tnum.numero = double.Parse(inteiro1);/// Caso entrar uma multiplicaçao é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros
-                        expressao.Add(tnum);
+                        numeros[c] = double.Parse(inteiro1);// Caso entrar uma subtracao é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros
+                        inteiro1 = inteiro1.Remove(0, inteiro1.Length);
                         msg = msg.Remove(0, 1);/// é removido esse item
-                        toper.operador = '-';
-                        expressao.Add(toper);/// Acrescenta o operador especifico para essa operação no vetor de operadores
+                        c = c + 1;
                         break;
                     case '(':
-                        tnum.numero = double.Parse(inteiro1);/// Caso entrar uma multiplicaçao é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros
-                        expressao.Add(tnum);                        
-                        msg = msg.Remove(0,1);/// é removido esse item
-                        toper.operador = '(';
-                        expressao.Add(toper);/// Acrescenta o operador especifico para essa operação no vetor de operadores
+                        numeros[c] = double.Parse(inteiro1);// Caso entrar um abre parenteses é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros               
+                        inteiro1 = inteiro1.Remove(0, inteiro1.Length);
+                        msg = msg.Remove(0, 1);/// é removido esse item
+                        c = c + 1;
                         break;
                     case ')':
-                        tnum.numero = double.Parse(inteiro1);/// Caso entrar uma multiplicaçao é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros
-                        expressao.Add(tnum);                        
-                        msg = msg.Remove(0,1);/// é removido esse item
-                        toper.operador = ')';
-                        expressao.Add(toper);/// Acrescenta o operador especifico para essa operação no vetor de operadores
+                        numeros[c] = double.Parse(inteiro1);// Caso entrar um fecha parenteses é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros
+                        inteiro1 = inteiro1.Remove(0, inteiro1.Length);
+                        msg = msg.Remove(0, 1);/// é removido esse item
+                        c = c + 1;
                         break;                    
                     default:
-                        a = double.Parse(inteiro1);
+                        numeros[c] = double.Parse(inteiro1);
                         msg = msg.Remove(0, 1);
+                        inteiro1 = inteiro1.Remove(0, inteiro1.Length);
+                        c = 0;
                         break;   
                 }
             }
@@ -189,12 +160,7 @@ namespace DirectCalc7._1
             //resolver(expressao);
             
         }
-        /*
-        public void resolver(List<Token> tokens)
-        {
-            resultado = ne[0] * ne[1]; 
-        }*/
-
+        
         public int[] reorganizar(int[] numeros, int index)
         {
             for (int i = index; i < numeros.Length; i++)
