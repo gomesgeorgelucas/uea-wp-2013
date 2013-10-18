@@ -79,8 +79,8 @@ namespace DirectCalc7._1
             set { _toper = value; }
         }
 
-        double[] numeros = new double[2];
-        String operadores;
+        List<double> numeros = new List<double>();
+        //double[] numeros = new double[2];
         int c = 0;
         public void tokenaizer(string msg)
         {
@@ -113,7 +113,8 @@ namespace DirectCalc7._1
                         msg = msg.Remove(0,1);/// e removido esse item
                         break;
                     case 'x':
-                        numeros[c] = double.Parse(inteiro1);// Caso entrar uma multiplicaçao é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros
+                        numeros.Add(double.Parse(inteiro1));
+                        //numeros[c] = double.Parse(inteiro1);// Caso entrar uma multiplicaçao é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros
                         inteiro1 = inteiro1.Remove(0,inteiro1.Length);
                         msg = msg.Remove(0,1);/// é removido esse item
                         c = c + 1;
@@ -149,7 +150,8 @@ namespace DirectCalc7._1
                         c = c + 1;
                         break;                    
                     default:
-                        numeros[c] = double.Parse(inteiro1);
+                        numeros.Add(double.Parse(inteiro1));
+                        //numeros[c] = double.Parse(inteiro1);
                         msg = msg.Remove(0, 1);
                         inteiro1 = inteiro1.Remove(0, inteiro1.Length);
                         c = 0;
@@ -157,6 +159,7 @@ namespace DirectCalc7._1
                 }
             }
             resultado = numeros[0] * numeros[1];
+            numeros.Clear();
             //resolver(expressao);
             
         }
