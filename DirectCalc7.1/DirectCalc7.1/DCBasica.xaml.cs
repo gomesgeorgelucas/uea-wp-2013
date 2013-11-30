@@ -28,6 +28,15 @@ namespace DirectCalc7
             }
 	    }
 
+        private String _expr;
+
+        public String expr
+        {
+            get { return _expr; }
+            set { _expr = value; }
+        }
+        
+
         private String _resposta;
 
         public String resposta
@@ -43,7 +52,7 @@ namespace DirectCalc7
         ///Inicializador da calculadora
         {
             InitializeComponent();
-           
+            expr = "0";
         }
 
         private void mostrarCalc(String displayMsg)
@@ -53,6 +62,7 @@ namespace DirectCalc7
             txtExpressao.Visibility = System.Windows.Visibility.Visible;//mostra o exedente da string abaixo
             txtExpressao.TextAlignment = TextAlignment.Right;//alinha a string a direita do textBlock
             txtExpressao.Text = displayMsg;//mostra o que tem na string no textBlock
+            btExpresao.Text = expr;
         }
 
         private void bt0_Click(object sender, RoutedEventArgs e)
@@ -71,9 +81,11 @@ namespace DirectCalc7
 
         private void btIgual_Click(object sender, RoutedEventArgs e)
         {
+            expr = expr.Remove(0);
             displayMsg = displayMsg + "=";
             verificador.tokenaizer(displayMsg);
             btResultado.Text = verificador.resultado.ToString();
+            expr = displayMsg;
             displayMsg = displayMsg.Remove(0);
             mostrarCalc(displayMsg);
         }

@@ -31,14 +31,7 @@ namespace DirectCalc7._1
         public Phaser()
         {
         }
-        private char[] _operadores;
-
-        public char[] operadores
-        {
-            get { return _operadores; }
-            set { _operadores = value; }
-        }
-                
+                        
         private String _inteiro1;
 
         public String inteiro1
@@ -47,9 +40,9 @@ namespace DirectCalc7._1
             set { _inteiro1 = value; }
         }        
 
-        private double _resultado;
+        private String _resultado;
 
-        public double resultado
+        public String resultado
         {
             get { return _resultado; }
             set { _resultado = value; }
@@ -80,12 +73,12 @@ namespace DirectCalc7._1
         }
 
         List<double> numeros = new List<double>();
+        List<string> operadores = new List<string>();
         //double[] numeros = new double[2];
         int c = 0;
         public void tokenaizer(string msg)
         {
-            resultado = 0;
-          inteiros(msg);          
+            resultado = 0;inteiros(msg);          
         }
 
         
@@ -113,39 +106,44 @@ namespace DirectCalc7._1
                         msg = msg.Remove(0,1);/// e removido esse item
                         break;
                     case 'x':
-                        numeros.Add(double.Parse(inteiro1));
-                        //numeros[c] = double.Parse(inteiro1);// Caso entrar uma multiplicaçao é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros
-                        inteiro1 = inteiro1.Remove(0,inteiro1.Length);
+                        numeros.Add(double.Parse(inteiro1));//faz o parse e adiciona na lista de numeros
+                        inteiro1 = inteiro1.Remove(0,inteiro1.Length);//remove o numero em forma de string
+                        operadores.Add("x");//insere o operador especifico da funcao
                         msg = msg.Remove(0,1);/// é removido esse item
                         c = c + 1;
                         break;
                     case '/':
-                        numeros[c] = double.Parse(inteiro1);// Caso entrar uma divisao é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros
-                        inteiro1 = inteiro1.Remove(0, inteiro1.Length);
+                        numeros.Add(double.Parse(inteiro1));//faz o parse e adiciona na lista de numeros
+                        inteiro1 = inteiro1.Remove(0, inteiro1.Length);//remove o numero em forma de string
+                        operadores.Add("/");//insere o operador especifico da funcao
                         msg = msg.Remove(0, 1);/// é removido esse item
                         c = c + 1;
                         break;
                     case '+':
-                        numeros[c] = double.Parse(inteiro1);// Caso entrar uma soma é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros
-                        inteiro1 = inteiro1.Remove(0, inteiro1.Length);
+                        numeros.Add(double.Parse(inteiro1));//faz o parse e adiciona na lista de numeros
+                        inteiro1 = inteiro1.Remove(0, inteiro1.Length);//remove o numero em forma de string
+                        operadores.Add("+");//insere o operador especifico da funcao
                         msg = msg.Remove(0, 1);/// é removido esse item
                         c = c + 1;
                         break;
                     case '-':
-                        numeros[c] = double.Parse(inteiro1);// Caso entrar uma subtracao é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros
-                        inteiro1 = inteiro1.Remove(0, inteiro1.Length);
+                        numeros.Add(double.Parse(inteiro1));//faz o parse e adiciona na lista de numeros
+                        inteiro1 = inteiro1.Remove(0, inteiro1.Length);//remove o numero em forma de string
+                        operadores.Add("-");//insere o operador especifico da funcao
                         msg = msg.Remove(0, 1);/// é removido esse item
                         c = c + 1;
                         break;
                     case '(':
-                        numeros[c] = double.Parse(inteiro1);// Caso entrar um abre parenteses é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros               
-                        inteiro1 = inteiro1.Remove(0, inteiro1.Length);
+                        numeros.Add(double.Parse(inteiro1));//faz o parse e adiciona na lista de numeros
+                        inteiro1 = inteiro1.Remove(0, inteiro1.Length);//remove o numero em forma de string
+                        operadores.Add("(");//insere o operador especifico da funcao
                         msg = msg.Remove(0, 1);/// é removido esse item
                         c = c + 1;
                         break;
                     case ')':
-                        numeros[c] = double.Parse(inteiro1);// Caso entrar um fecha parenteses é feito o parse do inteiro lido até o momento e acrescentado a uma posição distinta do vetor de numeros
-                        inteiro1 = inteiro1.Remove(0, inteiro1.Length);
+                        numeros.Add(double.Parse(inteiro1));//faz o parse e adiciona na lista de numeros
+                        inteiro1 = inteiro1.Remove(0, inteiro1.Length);//remove o numero em forma de string
+                        operadores.Add(")");//insere o operador especifico da funcao
                         msg = msg.Remove(0, 1);/// é removido esse item
                         c = c + 1;
                         break;                    
@@ -158,12 +156,67 @@ namespace DirectCalc7._1
                         break;   
                 }
             }
-            resultado = numeros[0] * numeros[1];
+          //  resultado = numeros[0] * numeros[1];
             numeros.Clear();
             //resolver(expressao);
             
         }
-        
+
+        public double resolver(List<double>num , List<string>oper)
+        {
+            double resposta;
+            resposta = 0;
+            if (verificarParenteses(oper))
+            {
+                foreach (string s in oper)
+                {
+                    if (s=="(")
+                    {
+                        resolveparenteses(oper,oper.IndexOf(s));
+                    }
+                }
+            }
+
+
+            return resposta;   
+        }
+
+        public void resolveparenteses(List<string>oper,int index)
+        {
+            List<string> suboper = new List<string>();
+            List<double> subnum = new List<double>();
+            do
+            {
+                
+            } while (true);
+        }
+
+        public bool verificarParenteses(List<string> oper)
+        {
+            bool par = true;
+            int delimita = 0;
+            foreach (string s in oper)
+            {
+                if (s == "(")
+                {
+                    par = false;
+                    delimita++;
+                }
+                if (s == ")")
+                {
+                    delimita--;
+                }
+                if (delimita == 0)
+                {
+                    par = true;
+                }
+                if (!par)
+                {
+                    resultado = "Erro dos parenteses";
+                }
+            }
+            return par;
+        }
         public int[] reorganizar(int[] numeros, int index)
         {
             for (int i = index; i < numeros.Length; i++)
@@ -182,9 +235,6 @@ namespace DirectCalc7._1
         public double subtrair(double num1, double num2)
         { return (num1 - num2); }
 
-        public void resposta(int[] numeros, char[] operdores)
-        {
-
-        }
+     
     }
 }
