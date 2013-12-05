@@ -5,28 +5,6 @@ using System.Text;
 
 namespace DirectCalc7._1
 {
-    
-    class Token
-    {
-        public Token()
-        { }
-        private double _numeros;
-
-        public double numero
-        {
-            get { return _numeros; }
-            set { _numeros = value; }
-        }
-
-        private char _operador;
-
-        public char operador
-        {
-            get { return _operador; }
-            set { _operador = value; }
-        }
-    }
-
     class Phaser
     {
         public Phaser()
@@ -47,30 +25,6 @@ namespace DirectCalc7._1
         {
             get { return _resultado; }
             set { _resultado = value; }
-        }
-
-        private List<Token> _expressao;
-
-        public List<Token> expressao
-        {
-            get { return _expressao; }
-            set { _expressao = value; }
-        }
-
-        private Token _tnum;
-
-        public Token tnum
-        {
-            get { return _tnum; }
-            set { _tnum = value; }
-        }
-
-        private Token _toper;
-
-        public Token toper
-        {
-            get { return _toper; }
-            set { _toper = value; }
         }
 
         List<double> numeros = new List<double>();
@@ -122,59 +76,99 @@ namespace DirectCalc7._1
                         c = c + 1;
                         break;
                     case '+':
-                        if (inteiro1.Length == 0)
+                        if (_inteiro1 == null)
                         {
                             inteiro1 = "0";
                         }
-                        numeros.Add(double.Parse(inteiro1));//faz o parse e adiciona na lista de numeros
-                        inteiro1 = inteiro1.Remove(0, inteiro1.Length);//remove o numero em forma de string
-                        operadores.Add("+");//insere o operador especifico da funcao
-                        msg = msg.Remove(0, 1);/// é removido esse item
-                        c = c + 1;
+                        if (operadores[operadores.Count - 1] == "(")
+                        {
+                            inteiro1 = "0";
+                        }
+                        if (operadores[operadores.Count - 1] == ")")
+                        {
+                            inteiro1 = "0";
+                        }
+                            numeros.Add(double.Parse(inteiro1));//faz o parse e adiciona na lista de numeros
+                            inteiro1 = inteiro1.Remove(0, inteiro1.Length);//remove o numero em forma de string
+                            operadores.Add("+");//insere o operador especifico da funcao
+                            msg = msg.Remove(0, 1);/// é removido esse item
+                            c = c + 1;                        
+                        if (operadores[operadores.Count - 1] == "x")
+                        {
+                            operadores[operadores.Count - 1] = "+";
+                        }
+                        if (operadores[operadores.Count - 1] == "/")
+                        {
+                            operadores[operadores.Count - 1] = "+";
+                        }
                         break;
                     case '-':
-                        if (inteiro1.Length == 0)
+                        if (_inteiro1 == "")
                         {
                             inteiro1 = "0";
                         }
-                        numeros.Add(double.Parse(inteiro1));//faz o parse e adiciona na lista de numeros
-                        inteiro1 = inteiro1.Remove(0, inteiro1.Length);//remove o numero em forma de string
-                        operadores.Add("-");//insere o operador especifico da funcao
-                        msg = msg.Remove(0, 1);/// é removido esse item
-                        c = c + 1;
+                        if (operadores[operadores.Count - 1] == "(")
+                        {
+                            inteiro1 = "0";
+                        }
+
+                        if (operadores[operadores.Count - 1] == ")")
+                        {
+                            inteiro1 = "0";
+                        }
+                            numeros.Add(double.Parse(inteiro1));//faz o parse e adiciona na lista de numeros
+                            inteiro1 = inteiro1.Remove(0, inteiro1.Length);//remove o numero em forma de string
+                            operadores.Add("-");//insere o operador especifico da funcao
+                            msg = msg.Remove(0, 1);/// é removido esse item
+                            c = c + 1;                      
+                        if (operadores[operadores.Count - 1] == "x")
+                        {
+                            operadores[operadores.Count - 1] = "-";
+                        }
+                        if (operadores[operadores.Count - 1] == "/")
+                        {
+                            operadores[operadores.Count - 1] = "-";
+                        }
                         break;
                     case '(':
-                        if (inteiro1.Length == 0)
+                        if (_inteiro1 == null)
                         {
                             inteiro1 = "0";
                         }
                         inteiro1 = inteiro1.Remove(0, inteiro1.Length);//remove o numero em forma de string
-                        operadores.Add("(");//insere o operador especifico da funcao
-                        msg = msg.Remove(0, 1);/// é removido esse item
-                        c = c + 1;
+                            operadores.Add("(");//insere o operador especifico da funcao
+                            msg = msg.Remove(0, 1);/// é removido esse item
+                            c = c + 1;
+                        
                         break;
                     case ')':
-                        if (inteiro1.Length == 0)
+                        if (_inteiro1 == null)
                         {
                             inteiro1 = "0";
                         }
-                        numeros.Add(double.Parse(inteiro1));//faz o parse e adiciona na lista de numeros
-                        inteiro1 = inteiro1.Remove(0, inteiro1.Length);//remove o numero em forma de string
-                        operadores.Add(")");//insere o operador especifico da funcao
-                        msg = msg.Remove(0, 1);/// é removido esse item
-                        c = c + 1;
+                            numeros.Add(double.Parse(inteiro1));//faz o parse e adiciona na lista de numeros
+                            inteiro1 = inteiro1.Remove(0, inteiro1.Length);//remove o numero em forma de string
+                            operadores.Add(")");//insere o operador especifico da funcao
+                            msg = msg.Remove(0, 1);/// é removido esse item
+                            c = c + 1;                        
                         break;                    
                     default:
-                        numeros.Add(double.Parse(inteiro1));
-                        //numeros[c] = double.Parse(inteiro1);
-                        msg = msg.Remove(0, 1);
-                        inteiro1 = inteiro1.Remove(0, inteiro1.Length);
-                        c = 0;
+                        if (numeros.Count == 0)
+                        {
+                            numeros.Add(0);
+                        }
+                        else
+                        {
+                            numeros.Add(double.Parse(inteiro1));
+                            //numeros[c] = double.Parse(inteiro1);
+                            msg = msg.Remove(0, 1);
+                            inteiro1 = inteiro1.Remove(0, inteiro1.Length);
+                            c = 0;
+                        }
                         break;   
                 }
             }
-          //  resultado = numeros[0] * numeros[1];
-            
+          //  resultado = numeros[0] * numeros[1];            
             resultado = resolver().ToString();
             numeros.Clear();
             operadores.Clear();
@@ -217,6 +211,7 @@ namespace DirectCalc7._1
             dividir(index1, index2);
             somar(index1, index2);
             subtrair(index1, index2);
+            numeros.Remove(index1);
             resolver();
         }
 
@@ -302,8 +297,6 @@ namespace DirectCalc7._1
                     operadores.Remove(operadores[i]);
                 }
             }
-        }
-
-     
+        }     
     }
 }
