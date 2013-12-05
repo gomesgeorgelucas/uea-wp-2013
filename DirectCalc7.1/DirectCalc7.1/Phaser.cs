@@ -5,6 +5,7 @@ using System.Text;
 
 namespace DirectCalc7._1
 {
+    
     class Token
     {
         public Token()
@@ -78,7 +79,8 @@ namespace DirectCalc7._1
         int c = 0;
         public void tokenaizer(string msg)
         {
-            resultado = 0;inteiros(msg);          
+            resultado = "";
+            inteiros(msg);          
         }
 
         
@@ -120,6 +122,10 @@ namespace DirectCalc7._1
                         c = c + 1;
                         break;
                     case '+':
+                        if (inteiro1.Length == 0)
+                        {
+                            inteiro1 = "0";
+                        }
                         numeros.Add(double.Parse(inteiro1));//faz o parse e adiciona na lista de numeros
                         inteiro1 = inteiro1.Remove(0, inteiro1.Length);//remove o numero em forma de string
                         operadores.Add("+");//insere o operador especifico da funcao
@@ -127,6 +133,10 @@ namespace DirectCalc7._1
                         c = c + 1;
                         break;
                     case '-':
+                        if (inteiro1.Length == 0)
+                        {
+                            inteiro1 = "0";
+                        }
                         numeros.Add(double.Parse(inteiro1));//faz o parse e adiciona na lista de numeros
                         inteiro1 = inteiro1.Remove(0, inteiro1.Length);//remove o numero em forma de string
                         operadores.Add("-");//insere o operador especifico da funcao
@@ -134,13 +144,20 @@ namespace DirectCalc7._1
                         c = c + 1;
                         break;
                     case '(':
-                        numeros.Add(double.Parse(inteiro1));//faz o parse e adiciona na lista de numeros
+                        if (inteiro1.Length == 0)
+                        {
+                            inteiro1 = "0";
+                        }
                         inteiro1 = inteiro1.Remove(0, inteiro1.Length);//remove o numero em forma de string
                         operadores.Add("(");//insere o operador especifico da funcao
                         msg = msg.Remove(0, 1);/// é removido esse item
                         c = c + 1;
                         break;
                     case ')':
+                        if (inteiro1.Length == 0)
+                        {
+                            inteiro1 = "0";
+                        }
                         numeros.Add(double.Parse(inteiro1));//faz o parse e adiciona na lista de numeros
                         inteiro1 = inteiro1.Remove(0, inteiro1.Length);//remove o numero em forma de string
                         operadores.Add(")");//insere o operador especifico da funcao
@@ -157,38 +174,50 @@ namespace DirectCalc7._1
                 }
             }
           //  resultado = numeros[0] * numeros[1];
-            numeros.Clear();
-            //resolver(expressao);
             
+            resultado = resolver().ToString();
+            numeros.Clear();
+            operadores.Clear();
         }
 
-        public double resolver(List<double>num , List<string>oper)
+        public double resolver()
         {
             double resposta;
             resposta = 0;
-            if (verificarParenteses(oper))
+            int indice1=0, indice2=0;
+            if (verificarParenteses(operadores))
             {
-                foreach (string s in oper)
+                foreach (string s in operadores)
                 {
-                    if (s=="(")
+                    if (s == "(")
                     {
-                        resolveparenteses(oper,oper.IndexOf(s));
+                        indice1 = operadores.IndexOf(s);
+                    }
+                    if (s == ")")
+                    {
+                        indice2 = operadores.IndexOf(s);
+                        resolveparenteses(indice1, indice2);
+                        operadores.Remove(s);
+                        operadores.Remove(operadores[indice1]);
                     }
                 }
             }
+            multiplicar(0, operadores.Count);
+            dividir(0, operadores.Count);
+            somar(0, operadores.Count);
+            subtrair(0, operadores.Count);
 
-
+            resposta = numeros[0];
             return resposta;   
         }
 
-        public void resolveparenteses(List<string>oper,int index)
+        public void resolveparenteses(int index1,int index2)
         {
-            List<string> suboper = new List<string>();
-            List<double> subnum = new List<double>();
-            do
-            {
-                
-            } while (true);
+            multiplicar(index1, index2);
+            dividir(index1, index2);
+            somar(index1, index2);
+            subtrair(index1, index2);
+            resolver();
         }
 
         public bool verificarParenteses(List<string> oper)
@@ -226,14 +255,54 @@ namespace DirectCalc7._1
             return numeros;
         }
 
-        public double multiplicar(double multiplicado, double multiplicador)
-        { return (multiplicado * multiplicador); }
-        public double dividir(double divisor, double dividendo)
-        { return (divisor / dividendo); }
-        public double somar(double num1, double num2)
-        { return (num1 + num2); }
-        public double subtrair(double num1, double num2)
-        { return (num1 - num2); }
+        public void multiplicar(int de, int ate)
+        {
+            for (int i = de; i < ate; i++)
+            {
+                if (operadores[i + 1] == "x")
+                {
+                    numeros[i + 1] = numeros[i + 1] * numeros[i + 2];
+                    numeros.Remove(numeros[i + 2]);
+                    operadores.Remove(operadores[i]);
+                }
+            }
+        }
+        public void dividir(int de, int ate)
+        {
+            for (int i = de; i < ate; i++)
+            {
+                if (operadores[i + 1] == "/")
+                {
+                    numeros[i + 1] = numeros[i + 1] / numeros[i + 2];
+                    numeros.Remove(numeros[i + 2]);
+                    operadores.Remove(operadores[i]);
+                }                
+            }
+        }
+        public void somar(int de, int ate)
+        {
+            for (int i = de; i < ate; i++)
+            {
+                if (operadores[i]=="+")
+                {
+                    numeros[i + 1] = numeros[i+ 1] + numeros[i+ 2];
+                    numeros.Remove(numeros[i + 2]);
+                    operadores.Remove(operadores[i]); 
+                }
+            }
+        }
+        public void subtrair(int de, int ate)
+        {
+            for (int i = de; i < ate; i++)
+            {
+                if (operadores[i + 1] == "-")
+                {
+                    numeros[i + 1] = numeros[i + 1] - numeros[i + 2];
+                    numeros.Remove(numeros[i + 2]);
+                    operadores.Remove(operadores[i]);
+                }
+            }
+        }
 
      
     }
