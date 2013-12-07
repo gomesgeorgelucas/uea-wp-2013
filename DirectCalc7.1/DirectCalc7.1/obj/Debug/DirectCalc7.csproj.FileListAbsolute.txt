@@ -12,3 +12,18 @@ c:\users\walderi filho\documents\visual studio 2012\Projects\DirectCalc7.1\Direc
 c:\users\walderi filho\documents\visual studio 2012\Projects\DirectCalc7.1\DirectCalc7.1\obj\Debug\DirectCalc7.1.pdb
 c:\users\walderi filho\documents\visual studio 2012\Projects\DirectCalc7.1\DirectCalc7.1\obj\Debug\XapCacheFile.xml
 C:\Users\Walderi Filho\documents\visual studio 2012\Projects\DirectCalc7.1\DirectCalc7.1\obj\Debug\DirectCalc7.csprojResolveAssemblyReference.cache
+D:\git\wp\DirectCalc7.1\DirectCalc7.1\Bin\Debug\ApplicationIcon.png
+D:\git\wp\DirectCalc7.1\DirectCalc7.1\Bin\Debug\Background.png
+D:\git\wp\DirectCalc7.1\DirectCalc7.1\Bin\Debug\DirectCalc7.1.dll
+D:\git\wp\DirectCalc7.1\DirectCalc7.1\Bin\Debug\DirectCalc7.1.pdb
+D:\git\wp\DirectCalc7.1\DirectCalc7.1\Bin\Debug\AppManifest.xaml
+D:\git\wp\DirectCalc7.1\DirectCalc7.1\Bin\Debug\DirectCalc7._1.xap
+D:\git\wp\DirectCalc7.1\DirectCalc7.1\obj\Debug\DirectCalc7.csprojResolveAssemblyReference.cache
+D:\git\wp\DirectCalc7.1\DirectCalc7.1\obj\Debug\App.g.cs
+D:\git\wp\DirectCalc7.1\DirectCalc7.1\obj\Debug\DCBasica.g.cs
+D:\git\wp\DirectCalc7.1\DirectCalc7.1\obj\Debug\MainPage.g.cs
+D:\git\wp\DirectCalc7.1\DirectCalc7.1\obj\Debug\DirectCalc7.1.g.resources
+D:\git\wp\DirectCalc7.1\DirectCalc7.1\obj\Debug\DirectCalc7.1.dll
+D:\git\wp\DirectCalc7.1\DirectCalc7.1\obj\Debug\DirectCalc7.1.pdb
+D:\git\wp\DirectCalc7.1\DirectCalc7.1\obj\Debug\XapCacheFile.xml
+D:\git\wp\DirectCalc7.1\DirectCalc7.1\obj\Debug\CodeHistory.g.cs
