@@ -34,7 +34,9 @@ namespace DirectCalc7._1
         public void tokenaizer(string msg)
         {
             resultado = "";
-            inteiros(msg);          
+            operadores.Add("(");
+            numeros.Add(0);
+            inteiros(msg);
         }
 
         
@@ -80,14 +82,6 @@ namespace DirectCalc7._1
                         {
                             inteiro1 = "0";
                         }
-                        if (operadores[operadores.Count - 1] == "(")
-                        {
-                            inteiro1 = "0";
-                        }
-                        if (operadores[operadores.Count - 1] == ")")
-                        {
-                            inteiro1 = "0";
-                        }
                             numeros.Add(double.Parse(inteiro1));//faz o parse e adiciona na lista de numeros
                             inteiro1 = inteiro1.Remove(0, inteiro1.Length);//remove o numero em forma de string
                             operadores.Add("+");//insere o operador especifico da funcao
@@ -104,15 +98,6 @@ namespace DirectCalc7._1
                         break;
                     case '-':
                         if (_inteiro1 == "")
-                        {
-                            inteiro1 = "0";
-                        }
-                        if (operadores[operadores.Count - 1] == "(")
-                        {
-                            inteiro1 = "0";
-                        }
-
-                        if (operadores[operadores.Count - 1] == ")")
                         {
                             inteiro1 = "0";
                         }
@@ -135,6 +120,8 @@ namespace DirectCalc7._1
                         {
                             inteiro1 = "0";
                         }
+                        numeros.Add(double.Parse(inteiro1));
+                        numeros.Add(0);
                         inteiro1 = inteiro1.Remove(0, inteiro1.Length);//remove o numero em forma de string
                             operadores.Add("(");//insere o operador especifico da funcao
                             msg = msg.Remove(0, 1);/// é removido esse item
@@ -160,6 +147,7 @@ namespace DirectCalc7._1
                         else
                         {
                             numeros.Add(double.Parse(inteiro1));
+                            operadores.Add(")");
                             //numeros[c] = double.Parse(inteiro1);
                             msg = msg.Remove(0, 1);
                             inteiro1 = inteiro1.Remove(0, inteiro1.Length);
@@ -191,16 +179,10 @@ namespace DirectCalc7._1
                     {
                         indice2 = operadores.IndexOf(s);
                         resolveparenteses(indice1, indice2);
-                        operadores.Remove(s);
-                        operadores.Remove(operadores[indice1]);
+                        break;
                     }
                 }
             }
-            multiplicar(0, operadores.Count);
-            dividir(0, operadores.Count);
-            somar(0, operadores.Count);
-            subtrair(0, operadores.Count);
-
             resposta = numeros[0];
             return resposta;   
         }
@@ -212,6 +194,8 @@ namespace DirectCalc7._1
             somar(index1, index2);
             subtrair(index1, index2);
             numeros.Remove(index1);
+            operadores.RemoveAt(index1);
+            operadores.RemoveAt(index1);
             resolver();
         }
 
@@ -254,10 +238,10 @@ namespace DirectCalc7._1
         {
             for (int i = de; i < ate; i++)
             {
-                if (operadores[i + 1] == "x")
+                if (operadores[i] == "x")
                 {
-                    numeros[i + 1] = numeros[i + 1] * numeros[i + 2];
-                    numeros.Remove(numeros[i + 2]);
+                    numeros[i] = numeros[i] * numeros[i + 1];
+                    numeros.Remove(numeros[i + 1]);
                     operadores.Remove(operadores[i]);
                 }
             }
@@ -266,10 +250,10 @@ namespace DirectCalc7._1
         {
             for (int i = de; i < ate; i++)
             {
-                if (operadores[i + 1] == "/")
+                if (operadores[i] == "/")
                 {
-                    numeros[i + 1] = numeros[i + 1] / numeros[i + 2];
-                    numeros.Remove(numeros[i + 2]);
+                    numeros[i] = numeros[i] / numeros[i + 1];
+                    numeros.Remove(numeros[i + 1]);
                     operadores.Remove(operadores[i]);
                 }                
             }
@@ -280,8 +264,8 @@ namespace DirectCalc7._1
             {
                 if (operadores[i]=="+")
                 {
-                    numeros[i + 1] = numeros[i+ 1] + numeros[i+ 2];
-                    numeros.Remove(numeros[i + 2]);
+                    numeros[i] = numeros[i] + numeros[i+ 1];
+                    numeros.Remove(numeros[i + 1]);
                     operadores.Remove(operadores[i]); 
                 }
             }
@@ -290,10 +274,10 @@ namespace DirectCalc7._1
         {
             for (int i = de; i < ate; i++)
             {
-                if (operadores[i + 1] == "-")
+                if (operadores[i] == "-")
                 {
-                    numeros[i + 1] = numeros[i + 1] - numeros[i + 2];
-                    numeros.Remove(numeros[i + 2]);
+                    numeros[i] = numeros[i] - numeros[i + 1];
+                    numeros.Remove(numeros[i + 1]);
                     operadores.Remove(operadores[i]);
                 }
             }
