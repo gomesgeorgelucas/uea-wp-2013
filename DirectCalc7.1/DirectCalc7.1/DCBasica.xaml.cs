@@ -12,14 +12,13 @@ using DirectCalc7._1;
 
 namespace DirectCalc7
 {
+    /// <summary>
+    /// Classe para controlar eventos da interface calculadora.
+    /// </summary>
     public partial class DCBasica : PhoneApplicationPage
     {
-        /// <summary>
-        ///     Interface da calculadora
-        /// </summary>
-      // propriedade do diaplay da calculadora
-        private String _displayMsg;
-
+       private String _displayMsg;
+ 
 	    public String displayMsg
 	    {
 	    	get { return _displayMsg;}
@@ -36,7 +35,6 @@ namespace DirectCalc7
             set { _expr = value; }
         }
         
-
         private String _resposta;
 
         public String resposta
@@ -45,38 +43,29 @@ namespace DirectCalc7
             set { _resposta = value; }
         }
         
-
         Phaser verificador = new Phaser();
 
+        /// <summary>
+        /// Construtor calculadora
+        /// </summary>
         public DCBasica()
-        ///Inicializador da calculadora
         {
             InitializeComponent();
             expr = "0";
+            mostrarCalc(expr); //Inicia contador zerado
         }
 
+        /// <summary>
+        /// Mostra a string no display de acompanhamento da expressão
+        /// </summary>
+        /// <param name="displayMsg"> Mensagem a ser mostrada</param>
         private void mostrarCalc(String displayMsg)
-        {
-        /// mostra a string no display de acompanhamento da expressão
-            txtExpressao.TextWrapping = TextWrapping.Wrap;//evita que a string ulttrapasse o textBlock
-            txtExpressao.Visibility = System.Windows.Visibility.Visible;//mostra o exedente da string abaixo
-            txtExpressao.TextAlignment = TextAlignment.Right;//alinha a string a direita do textBlock
-            txtExpressao.Text = displayMsg;//mostra o que tem na string no textBlock
+        {        
+            txtExpressao.TextWrapping = TextWrapping.Wrap; //evita que a string ulttrapasse o textBlock
+            txtExpressao.Visibility = System.Windows.Visibility.Visible; //mostra o exedente da string abaixo
+            txtExpressao.TextAlignment = TextAlignment.Right; //alinha a string a direita do textBlock
+            txtExpressao.Text = displayMsg; //mostra o que tem na string no textBlock
             btExpresao.Text = expr;
-        }
-
-        private void bt0_Click(object sender, RoutedEventArgs e)
-        {
-            ///Botão para o número 0
-            displayMsg = displayMsg + "0";
-            mostrarCalc(displayMsg);
-        }
-
-        private void btPt_Click(object sender, RoutedEventArgs e)
-        {
-            ///Botão para o ponto
-            displayMsg = displayMsg + ".";
-            mostrarCalc(displayMsg);
         }
 
         private void btIgual_Click(object sender, RoutedEventArgs e)
@@ -87,6 +76,14 @@ namespace DirectCalc7
             btResultado.Text = verificador.resultado.ToString();
             expr = displayMsg;
             displayMsg = displayMsg.Remove(0);
+            mostrarCalc(displayMsg);
+        }       
+               
+        //Numerais
+        private void bt0_Click(object sender, RoutedEventArgs e)
+        {
+            ///Botão para o número 0
+            displayMsg = displayMsg + "0";
             mostrarCalc(displayMsg);
         }
 
@@ -111,13 +108,6 @@ namespace DirectCalc7
             mostrarCalc(displayMsg);
         }
 
-        private void btDiv_Click(object sender, RoutedEventArgs e)
-        {
-            ///Botão para o operador de divisão
-            displayMsg = displayMsg + "/";
-            mostrarCalc(displayMsg);
-        }
-
         private void bt4_Click(object sender, RoutedEventArgs e)
         {
             ///Botão para o número 4
@@ -136,13 +126,6 @@ namespace DirectCalc7
         {
             ///Botão para o número 6
             displayMsg = displayMsg + "6";
-            mostrarCalc(displayMsg);
-        }
-
-        private void btMult_Click(object sender, RoutedEventArgs e)
-        {
-            ///Botão para o operador de multiplicação
-            displayMsg = displayMsg + "x";
             mostrarCalc(displayMsg);
         }
 
@@ -166,7 +149,22 @@ namespace DirectCalc7
             displayMsg = displayMsg + "9";
             mostrarCalc(displayMsg);
         }
+                
+        //Operadores
+        private void btDiv_Click(object sender, RoutedEventArgs e)
+        {
+            ///Botão para o operador de divisão
+            displayMsg = displayMsg + "/";
+            mostrarCalc(displayMsg);
+        }
 
+        private void btMult_Click(object sender, RoutedEventArgs e)
+        {
+            ///Botão para o operador de multiplicação
+            displayMsg = displayMsg + "x";
+            mostrarCalc(displayMsg);
+        }
+        
         private void btMin_Click(object sender, RoutedEventArgs e)
         {
             ///Botão para o operador de subtração
@@ -174,6 +172,14 @@ namespace DirectCalc7
             mostrarCalc(displayMsg);
         }
 
+        private void btMais_Click(object sender, RoutedEventArgs e)
+        {
+            ///Botão para o operador de adição
+            displayMsg = displayMsg + "+";
+            mostrarCalc(displayMsg);
+        }
+
+        //Auxiliares
         private void btAbrepar_Click(object sender, RoutedEventArgs e)
         {
             ///Botão para o caractere de prioridade abre parenteses
@@ -188,13 +194,13 @@ namespace DirectCalc7
             mostrarCalc(displayMsg);
         }
 
-        private void btMais_Click(object sender, RoutedEventArgs e)
+        private void btPt_Click(object sender, RoutedEventArgs e)
         {
-            ///Botão para o operador de adição
-            displayMsg = displayMsg + "+";
+            ///Botão para o ponto
+            displayMsg = displayMsg + ".";
             mostrarCalc(displayMsg);
         }
-
+       
         private void btAC_Click(object sender, RoutedEventArgs e)
         {
             ///Botão para apagar o ultimo acrescimo a string
@@ -202,9 +208,11 @@ namespace DirectCalc7
             mostrarCalc(displayMsg);
         }
 
+       
+        //Bloco de Texto Resultado
         private void btResultado_ManipulationStarted(object sender, System.Windows.Input.ManipulationStartedEventArgs e)
         {
-            AbrePagina("/DCBasica.xaml");
+            AbrePagina("/CodeHistory.xaml");
         }
         private void AbrePagina(string destino)
         {

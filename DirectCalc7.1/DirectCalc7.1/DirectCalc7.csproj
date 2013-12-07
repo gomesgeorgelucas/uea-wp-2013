@@ -61,6 +61,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CodeHistory.xaml.cs">
+      <DependentUpon>CodeHistory.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DCBasica.xaml.cs">
       <DependentUpon>DCBasica.xaml</DependentUpon>
     </Compile>
@@ -75,6 +78,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="CodeHistory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DCBasica.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
