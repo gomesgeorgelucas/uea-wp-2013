@@ -1,0 +1,5 @@
+d:\documents\visual studio 2012\Projects\ParserTPG\ParserTPG\bin\Debug\ParserTPG.exe.config
+d:\documents\visual studio 2012\Projects\ParserTPG\ParserTPG\bin\Debug\ParserTPG.exe
+d:\documents\visual studio 2012\Projects\ParserTPG\ParserTPG\bin\Debug\ParserTPG.pdb
+d:\documents\visual studio 2012\Projects\ParserTPG\ParserTPG\obj\Debug\ParserTPG.exe
+d:\documents\visual studio 2012\Projects\ParserTPG\ParserTPG\obj\Debug\ParserTPG.pdb

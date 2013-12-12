@@ -1,0 +1,6 @@
+d:\documents\visual studio 2012\Projects\ParserLab\ParserLab\bin\Debug\ParserLab.exe.config
+d:\documents\visual studio 2012\Projects\ParserLab\ParserLab\bin\Debug\ParserLab.exe
+d:\documents\visual studio 2012\Projects\ParserLab\ParserLab\bin\Debug\ParserLab.pdb
+d:\documents\visual studio 2012\Projects\ParserLab\ParserLab\obj\Debug\ParserLab.csprojResolveAssemblyReference.cache
+d:\documents\visual studio 2012\Projects\ParserLab\ParserLab\obj\Debug\ParserLab.exe
+d:\documents\visual studio 2012\Projects\ParserLab\ParserLab\obj\Debug\ParserLab.pdb
